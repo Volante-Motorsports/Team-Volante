@@ -345,7 +345,7 @@ spline-viewer .logo {
     overflow: hidden;
 }
 
-..team-page-wrapper::before {
+.team-page-wrapper::before {
     content: '';
     position: fixed;
     top: 0;

@@ -1,5 +1,7 @@
 "use client";
 
+import Link from "next/link";
+
 import { useEffect, useState } from "react";
 import SplineViewer from "@/components/SplineViewer";
 import { usePathname } from "next/navigation";
@@ -459,48 +461,27 @@ export default function HomeClient({}: HomeClientProps) {
               className="logo"
               alt="Team Volante Logo"
             />
-            <ul id="sidemenu">
-              <li>
-                <a href="#header" target="_blank">Home</a>
-              </li>
-              <li>
-                <a href="#about" target="_blank">About</a>
-              </li>
-              <li>
-                <a href="#ourteam" target="_blank">Our Team</a>
-              </li>
-              <li>
-                <a href="#timeline" target="_blank">Timeline</a>
-              </li>
-              <li>
-                <a href="#sponsors" target="_blank">Sponsors</a>
-              </li>
-              <li>
-                <a href="#contact" target="_blank">Contact</a>
-              </li>
-              <i className="fas fa-times"></i>
-            </ul>
-            <i className="fas fa-bars"></i>
-            <ul id="desktop-menu">
-              <li>
-                <a href="#header" target="_blank">Home</a>
-              </li>
-              <li>
-                <a href="#about" target="_blank">About</a>
-              </li>
-              <li>
-                <a href="#ourteam" target="_blank">Our Team</a>
-              </li>
-              <li>
-                <a href="#timeline" target="_blank">Timeline</a>
-              </li>
-              <li>
-                <a href="#sponsors" target="_blank">Sponsors</a>
-              </li>
-              <li>
-                <a href="#contact" target="_blank">Contact</a>
-              </li>
-            </ul>
+              <ul id="sidemenu">
+                <li><Link href="/">Home</Link></li>
+                <li><Link href="/about">About</Link></li>
+                <li><Link href="/team">Our Team</Link></li>
+                <li><Link href="/achievements">Timeline</Link></li>
+                <li><Link href="/sponsors">Sponsors</Link></li>
+                <li><Link href="/contact">Contact</Link></li>
+              </ul>
+
+              <i className="fas fa-times"></i>   {/* CLOSE ICON */}
+
+              <i className="fas fa-bars"></i>    {/* MENU ICON */}
+
+              <ul id="desktop-menu">
+                <li><Link href="/">Home</Link></li>
+                <li><Link href="/about">About</Link></li>
+                <li><Link href="/team">Our Team</Link></li>
+                <li><Link href="/achievements">Timeline</Link></li>
+                <li><Link href="/sponsors">Sponsors</Link></li>
+                <li><Link href="/contact">Contact</Link></li>
+              </ul>
           </nav>
 
           <div className="header-text">

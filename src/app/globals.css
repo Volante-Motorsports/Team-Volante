@@ -1,0 +1,395 @@
+@import "../styles/stylev.css";
+
+/* Additional Next.js specific styles */
+
+/* Hide Spline watermark */
+spline-viewer::part(logo) {
+    display: none !important;
+}
+
+spline-viewer a[href*="spline"],
+.spline-watermark,
+spline-viewer #logo,
+spline-viewer .logo {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+}
+
+/* Navbar styles for all pages */
+.main-navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    z-index: 1000;
+    padding: 10px 0;
+}
+
+/* Page header for inner pages */
+.page-header {
+    width: 100%;
+    padding-top: 20px;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.8) 0%, transparent 100%);
+}
+
+.page-header .container {
+    padding: 10px 10%;
+}
+
+/* Active link styling */
+.main-navbar a.active {
+    color: #ff004f !important;
+}
+
+.main-navbar a.active::after {
+    width: 100% !important;
+}
+
+/* Ensure sidemenu works with new navbar */
+.main-navbar .sidemenu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(51, 51, 51, 0.95);
+    padding-top: 60px;
+    transition: right 0.3s ease;
+    z-index: 1000;
+}
+
+.main-navbar .sidemenu.open {
+    right: 0;
+}
+
+.main-navbar .sidemenu a {
+    color: white;
+    display: block;
+    padding: 15px 30px;
+    font-size: 1.6rem;
+    text-align: center;
+}
+
+.main-navbar .sidemenu .fas.fa-times {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    cursor: pointer;
+    color: #ff004f;
+    font-size: 1.8rem;
+}
+
+.main-navbar>.fas.fa-bars {
+    display: none;
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: white;
+}
+
+@media (max-width: 768px) {
+    .main-navbar>.fas.fa-bars {
+        display: block;
+    }
+
+    .main-navbar #desktop-menu {
+        display: none;
+    }
+}
+
+@media (min-width: 769px) {
+    .main-navbar .sidemenu {
+        display: none;
+    }
+
+    .main-navbar #desktop-menu {
+        display: block;
+    }
+}
+
+/* About Page Background Styling */
+.about-page-wrapper {
+    position: relative;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.about-page-wrapper::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('/imagesvolante/buggy_about_bg.png');
+    background-size: 90%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-color: #000;
+    z-index: -2;
+    animation: slowZoom 30s ease-in-out infinite alternate;
+}
+
+.about-page-wrapper::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg,
+            rgba(0, 0, 0, 0.5) 0%,
+            rgba(0, 0, 0, 0.4) 30%,
+            rgba(20, 0, 30, 0.45) 60%,
+            rgba(0, 0, 0, 0.6) 100%);
+    z-index: -1;
+}
+
+@keyframes slowZoom {
+    0% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(1.1);
+    }
+}
+
+/* Enhanced text readability for About page */
+.about-page-wrapper .sub-title {
+    text-shadow: 0 0 30px rgba(255, 0, 79, 0.5), 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.about-page-wrapper #paraabout {
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+}
+
+.about-page-wrapper .tab-contents ul li {
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+}
+
+/* Glassmorphism effect for about section */
+.about-page-wrapper #about {
+    position: relative;
+}
+
+.about-page-wrapper .about-col-2 {
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 30px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .about-page-wrapper::before {
+        background-attachment: scroll;
+    }
+
+    .about-page-wrapper .about-col-2 {
+        padding: 20px;
+        margin-top: 20px;
+    }
+}
+
+/* Achievements Page Background Styling */
+.achievements-page-wrapper {
+    position: relative;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.achievements-page-wrapper::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('/imagesvolante/achievements_bg.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-color: #0a0a0a;
+    z-index: -2;
+}
+
+.achievements-page-wrapper::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg,
+            rgba(0, 0, 0, 0.6) 0%,
+            rgba(0, 0, 0, 0.4) 50%,
+            rgba(0, 0, 0, 0.7) 100%);
+    z-index: -1;
+}
+
+/* Enhanced timeline styling for achievements */
+.achievements-page-wrapper .headingtimeline {
+    text-shadow: 0 0 40px rgba(255, 0, 79, 0.6), 3px 3px 6px rgba(0, 0, 0, 0.9);
+}
+
+.achievements-page-wrapper .text-box {
+    background: linear-gradient(135deg,
+            rgba(80, 20, 40, 0.85) 0%,
+            rgba(40, 10, 25, 0.9) 50%,
+            rgba(60, 15, 30, 0.85) 100%);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 215, 0, 0.3);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5),
+        0 0 20px rgba(255, 0, 79, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.achievements-page-wrapper .text-box h2 {
+    text-shadow: 0 0 20px rgba(255, 0, 79, 0.4);
+}
+
+@media (max-width: 768px) {
+    .achievements-page-wrapper::before {
+        background-attachment: scroll;
+    }
+}
+
+/* Clickable sponsor cards styling */
+.card-sponsors-link {
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-sponsors-link:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 15px 40px rgba(255, 0, 79, 0.3), 0 5px 15px rgba(0, 0, 0, 0.4);
+}
+
+.card-sponsors-link:hover img {
+    filter: brightness(1.1);
+}
+
+/* Contact Page Background Styling */
+.contact-page-wrapper {
+    position: relative;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.contact-page-wrapper::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('/imagesvolante/contact_bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-color: #0a0a0a;
+    z-index: -2;
+}
+
+.contact-page-wrapper::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg,
+            rgba(0, 0, 0, 0.7) 0%,
+            rgba(0, 0, 0, 0.5) 40%,
+            rgba(0, 0, 0, 0.6) 100%);
+    z-index: -1;
+}
+
+/* Enhanced contact form styling */
+.contact-page-wrapper #contact-left,
+.contact-page-wrapper #contact-right {
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    padding: 30px;
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+}
+
+.contact-page-wrapper .sub-title {
+    text-shadow: 0 0 30px rgba(255, 0, 79, 0.5), 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+@media (max-width: 768px) {
+    .contact-page-wrapper::before {
+        background-attachment: scroll;
+    }
+
+    .contact-page-wrapper #contact-left,
+    .contact-page-wrapper #contact-right {
+        padding: 20px;
+    }
+}
+
+/* Team Page Background Styling */
+.team-page-wrapper {
+    position: relative;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+..team-page-wrapper::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('/imagesvolante/team_bg.png');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-color: #0a0a0a;
+    z-index: -2;
+}
+
+.team-page-wrapper::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg,
+            rgba(0, 0, 0, 0.75) 0%,
+            rgba(0, 0, 0, 0.5) 30%,
+            rgba(0, 0, 0, 0.6) 100%);
+    z-index: -1;
+}
+
+/* Enhanced team section styling */
+.team-page-wrapper .headingteam {
+    text-shadow: 0 0 40px rgba(255, 0, 79, 0.6), 3px 3px 6px rgba(0, 0, 0, 0.9);
+}
+
+.team-page-wrapper .card {
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+}
+
+@media (max-width: 768px) {
+    .team-page-wrapper::before {
+        background-attachment: scroll;
+    }
+}

@@ -1,0 +1,149 @@
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(
+    25,
+    24,
+    24,
+    0.9
+  ); /* Darker background for a modern look */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s, opacity 0.3s ease-in-out;
+}
+
+.modal.show {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* Modal content */
+.modal-content {
+  background: linear-gradient(135deg, #ff0000, #333); /* Modern gradient */
+  padding: 3vh 3vw;
+  border-radius: 2rem; /* Rounded edges */
+  display: flex;
+  flex-direction: row; /* Horizontal alignment */
+  align-items: center;
+  gap: 2vw;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.7);
+  max-width: 60vw; /* Smaller size on larger screens */
+  width: 70%;
+  min-height: 30vh;
+  height: auto;
+  animation: scaleUp 0.3s ease; /* Add subtle animation */
+}
+
+.modal-link {
+  text-decoration: underline;
+  color: white;
+  font-weight: 600;
+}
+
+.modal-content img {
+  max-width: 35%;
+  height: auto;
+  border-radius: 1rem; /* Rounded edges for the image */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.modal-content .modal-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left;
+  color: white;
+  max-width: 55%;
+}
+
+.modal-content h2 {
+  font-size: 4vw;
+  margin: 0 0 1vh 0;
+  line-height: 1.2;
+  color: white; /* Highlighted red for modern style */
+}
+
+.modal-content p {
+  font-size: 1vw;
+  margin: 0 0 2vh 0;
+  line-height: 1.5;
+}
+
+.close-btn {
+  align-self: flex-start;
+  padding: 1vh 3vw;
+  background-color: transparent;
+  border: 2px solid #ff4747;
+  color: #ff4747;
+  cursor: pointer;
+  font-size: 1vw;
+  border-radius: 1rem;
+  transition: all 0.3s ease;
+}
+
+.close-btn:hover {
+  background-color: #ff4747;
+  color: #121212;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .modal-content {
+    max-width: 80vw;
+    width: 80%;
+  }
+
+  .modal-content h2 {
+    font-size: 2.5vw;
+  }
+
+  .modal-content p {
+    font-size: 1.5vw;
+  }
+
+  .close-btn {
+    font-size: 1.2vw;
+  }
+}
+
+@media (max-width: 768px) {
+  .modal-content {
+    flex-direction: column;
+    gap: 2vh;
+    text-align: center;
+    padding: 4vh 3vw;
+  }
+
+  .modal-content img {
+    max-width: 70%;
+  }
+
+  .modal-content h2 {
+    font-size: 4vw;
+  }
+
+  .modal-content p {
+    font-size: 2.5vw;
+  }
+
+  .close-btn {
+    font-size: 2vw;
+  }
+}
+
+/* Subtle scale-up animation */
+@keyframes scaleUp {
+  0% {
+    transform: scale(0.9);
+  }
+  100% {
+    transform: scale(1);
+  }
+}

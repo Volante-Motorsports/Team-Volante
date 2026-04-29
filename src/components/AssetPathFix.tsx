@@ -7,12 +7,17 @@ export default function AssetPathFix() {
     <>
       <Script id="assetPathFix" strategy="afterInteractive">
         {`
-          (function() {
-            function fixImagePaths() {
-              const basePath = window.location.pathname.startsWith('/Team-Volante') ? '/Team-Volante' : '';
-              const images = document.querySelectorAll('img[src^="/imagesvolante"], img[src^="/Team-Volante/imagesvolante"]');
-              const videos = document.querySelectorAll('video source[src^="/imagesvolante"], video source[src^="/Team-Volante/imagesvolante"]');
-              const links = document.querySelectorAll('a[href^="/feature"], a[href^="/surprise"], a[href^="/Team-Volante/"], a[href^="/Team-Volante/feature"], a[href^="/Team-Volante/surprise"]');
+      (function () {
+        function fixImagePaths() {
+          const images = document.querySelectorAll('img[src^="/imagesvolante"]');
+          const videos = document.querySelectorAll('video source[src^="/imagesvolante"]');
+          const links = document.querySelectorAll('a[href^="/feature"], a[href^="/surprise"]');
+
+          // No basePath logic at all
+        }
+
+        fixImagePaths();
+      })();
               
               // Fix image paths
               images.forEach(img => {

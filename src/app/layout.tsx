@@ -10,8 +10,9 @@ export const metadata: Metadata = {
     title: 'Volante Motorsports',
     description: 'Team-Volante Racing Club specializes in building e-kart buggies and go-karts, winning multiple national competitions. Learn more about our journey in automotive innovation.',
     images: ['/imagesvolante/aboutus.jpg'],
-    url: 'https://team-volante.github.io/Team-Volante/',
+    url: 'https://volante-motorsports-main.vercel.app',
     type: 'website',
+    
   },
   icons: {
     icon: [

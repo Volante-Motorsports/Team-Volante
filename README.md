@@ -196,7 +196,7 @@ team-volante/
 
 For any issues or questions regarding the migrated website:
 
-- **Original Website**: [Team Volante GitHub](https://github.com/Team-Volante)
+- **Original Website**: [Team Volante GitHub](https://volante-motorsports-main.vercel.app)
 - **Email**: Volante@msrit.edu
 - **Instagram**: @team_volante
 

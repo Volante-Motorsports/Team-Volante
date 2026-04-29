@@ -374,11 +374,12 @@ export default function HomeClient({}: HomeClientProps) {
     }
 
     // Surprise button
-    const surpriseButton = document.getElementById("surpriseButton");
+const surpriseButton = document.getElementById("surpriseButton");
+
     if (surpriseButton) {
       surpriseButton.addEventListener("click", function (event) {
         event.preventDefault();
-        window.open(`${getBaseUrl()}/Team-Volante/surprise/`, "_blank");
+        window.open("/surprise", "_blank");
       });
     }
 

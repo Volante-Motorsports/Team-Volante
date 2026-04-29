@@ -144,10 +144,11 @@ export default function ClientScripts() {
 
     // Surprise button
     const surpriseButton = document.getElementById('surpriseButton');
+
     if (surpriseButton) {
-      surpriseButton.addEventListener('click', function(event) {
+      surpriseButton.addEventListener('click', function (event) {
         event.preventDefault();
-        window.open(`${repoBasePath}/Team-Volante/surprise/`, '_blank');
+        window.open('/surprise', '_blank');
       });
     }
 

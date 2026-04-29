@@ -13,15 +13,14 @@ export default function Navbar() {
         return repoBasePath;
     };
 
-    const navLinks = [
-        { href: "/", label: "Home" },
-        { href: "/Team-Volante/about/", label: "About" },
-        { href: "/Team-Volante/team/", label: "Team" },
-        { href: "/Team-Volante/achievements/", label: "Achievements" },
-        { href: "/Team-Volante/sponsors/", label: "Sponsors" },
-        { href: "/Team-Volante/contact/", label: "Contact" },
-    ];
-
+ const navLinks = [
+  { href: "/", label: "Home" },
+  { href: "/about", label: "About" },
+  { href: "/team", label: "Team" },
+  { href: "/achievements", label: "Achievements" },
+  { href: "/sponsors", label: "Sponsors" },
+  { href: "/contact", label: "Contact" },
+];
     const openMenu = () => setIsMenuOpen(true);
     const closeMenu = () => setIsMenuOpen(false);
 

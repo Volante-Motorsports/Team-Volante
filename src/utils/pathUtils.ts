@@ -1,6 +1,5 @@
-export const repoBasePath = process.env.NODE_ENV === 'production' ? '/Team-Volante' : '';
+export const repoBasePath = '';
 
 export function withRepoBase(path: string) {
-  const normalized = path.startsWith('/') ? path : `/${path}`;
-  return `${repoBasePath}${normalized}`;
+  return path.startsWith('/') ? path : `/${path}`;
 }

@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import './globals.css'
+import ScrollProgress from '@/components/ScrollProgress'
 
 export const metadata: Metadata = {
   title: 'Volante Motorsports',
@@ -59,7 +60,10 @@ export default function RootLayout({
           src="https://unpkg.com/@splinetool/viewer@1.9.30/build/spline-viewer.js"
         ></script>
       </head>
-      <body suppressHydrationWarning={true}>{children}</body>
+      <body suppressHydrationWarning={true}>
+        {children}
+        <ScrollProgress />
+      </body>
     </html>
   )
 }

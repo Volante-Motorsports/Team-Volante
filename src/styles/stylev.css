@@ -90,6 +90,52 @@ body::-webkit-scrollbar {
   color: #ff004f;
 }
 
+/* Scroll Slider Styles */
+.scroll-track {
+  position: fixed;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 8px;
+  height: 200px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  z-index: 100;
+  cursor: pointer;
+}
+
+.scroll-slider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 40px;
+  background: linear-gradient(180deg, #ff004f, #cc0000);
+  border-radius: 10px;
+  cursor: grab;
+  box-shadow: 0 0 10px rgba(255, 0, 79, 0.5);
+  transition: box-shadow 0.2s ease;
+}
+
+.scroll-slider:hover {
+  box-shadow: 0 0 15px rgba(255, 0, 79, 0.8);
+}
+
+.scroll-slider:active {
+  cursor: grabbing;
+}
+
+@media (max-width: 768px) {
+  .scroll-track {
+    height: 150px;
+    right: 5px;
+  }
+
+  .scroll-slider {
+    height: 30px;
+  }
+}
+
 @media (max-width: 768px) {
   .progress {
     bottom: 5vh; /* Keep consistent, but can adjust if needed */

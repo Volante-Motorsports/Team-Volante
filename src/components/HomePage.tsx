@@ -38,41 +38,6 @@ export default function HomePage() {
             window.open("/surprise", "_blank");
         });
         }
-
-        // Progress bar
-        const calScrollValue = () => {
-            const scrollProgress = document.getElementsByClassName(
-                "progress"
-            )[0] as HTMLElement;
-            if (!scrollProgress) return;
-
-            const pos = document.documentElement.scrollTop || document.body.scrollTop;
-            const calcHeight =
-                document.documentElement.scrollHeight - window.innerHeight;
-            const scrollValue = Math.round((pos * 100) / calcHeight);
-
-            if (pos > 100) {
-                scrollProgress.style.display = "grid";
-            } else {
-                scrollProgress.style.display = "none";
-            }
-
-            scrollProgress.style.background = `conic-gradient(#ff004f ${scrollValue}%, #2c2c2c ${scrollValue}%)`;
-        };
-
-        const scrollToTop = () => {
-            document.documentElement.scrollTop = 0;
-        };
-
-        window.addEventListener("scroll", calScrollValue);
-        const progressEl = document.getElementsByClassName("progress")[0];
-        if (progressEl) {
-            progressEl.addEventListener("click", scrollToTop);
-        }
-
-        return () => {
-            window.removeEventListener("scroll", calScrollValue);
-        };
     }, []);
 
     return (
@@ -83,13 +48,6 @@ export default function HomePage() {
                 url="https://prod.spline.design/D5E1U-xUUmM3ZrHH/scene.splinecode"
             />
             <div className="client"></div>
-
-            {/* Progress Bar */}
-            <div className="progress">
-                <span id="progress-value">
-                    <i className="fa-solid fa-angles-up"></i>
-                </span>
-            </div>
 
             {/* Header Section */}
             <div id="header">

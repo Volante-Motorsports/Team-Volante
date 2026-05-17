@@ -258,8 +258,11 @@ nav {
 
 .logo {
   cursor: pointer;
-  width: 80px;
+  width: 250px;
   transition: 0.5s ease;
+  height: auto;
+  mix-blend-mode: screen;
+  filter: brightness(1.1);
 }
 
 .logo:hover {
@@ -685,6 +688,7 @@ nav ul li a:hover::after {
   width: 100%;
   height: 500px;
   object-fit: cover;
+  object-position: center bottom;
   display: block;
 }
 

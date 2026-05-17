@@ -204,6 +204,11 @@ export default function HomeClient({}: HomeClientProps) {
         title: "TEAM ACHIEVEMENTS",
         description: "Celebrating our victories and milestones",
       },
+      {
+        image: `${getBaseUrl()}/imagesvolante/grouppic5.png`,
+        title: "MEGA ATV CHAMPIONSHIP",
+        description: "2nd Runner Up — Mega ATV Championship, Goa 2022",
+      },
     ];
 
     const showSlide = (index: number) => {
@@ -351,27 +356,7 @@ export default function HomeClient({}: HomeClientProps) {
     window.addEventListener("scroll", calScrollValue);
     window.addEventListener("resize", calScrollValue);
 
-    // Contact form functionality
-    const scriptURL =
-      "https://script.google.com/macros/s/AKfycbwD11D7WsF4Hq2IlJsVPB-uww4tVRBFYJ--4rCTJSXtQb7bDfOzlQC5N6nMbUUH_aT1/exec";
-    const form = document.forms.namedItem("submit-to-google-sheet");
-
-    if (form) {
-      form.addEventListener("submit", (e) => {
-        e.preventDefault();
-        fetch(scriptURL, { method: "POST", body: new FormData(form) })
-          .then((response) => {
-            if (
-              confirm("Message sent successfully! We'll reach you out soon!.")
-            ) {
-              form.reset();
-            } else {
-              console.log("User canceled further actions.");
-            }
-          })
-          .catch((error) => console.error("Error!", error.message));
-      });
-    }
+    // FormSubmit handles the submission natively. No JS required here.
 
     // Surprise button
 const surpriseButton = document.getElementById("surpriseButton");
@@ -458,7 +443,7 @@ const surpriseButton = document.getElementById("surpriseButton");
         <div className="container">
           <nav>
             <img
-              src={`${getBaseUrl()}/imagesvolante/logotrial1.webp`}
+              src={`${getBaseUrl()}/imagesvolante/volanteLogo.webp`}
               className="logo"
               alt="Team Volante Logo"
             />
@@ -485,29 +470,20 @@ const surpriseButton = document.getElementById("surpriseButton");
               </ul>
           </nav>
 
-          <div className="header-text">
-            <h1>
-              Welcome To <span>VOLANTE</span>
-            </h1>
-            <h3 className="typing-text">
-              <span></span>
-            </h3>
-
-            <div className="social-icon">
-              <a href="https://www.linkedin.com/company/Volante-Motorsports-official/about/" target="_blank">
-                <i className="fa-brands fa-linkedin"></i>
-              </a>
-              {/* Replaced GitHub with WhatsApp group link per request */}
-              <a href="https://chat.whatsapp.com/ECtg9BcHZBSI3E9tdcNqGu?mode=ems_copy_t" aria-label="WhatsApp group" target="_blank">
-                <i className="fa-brands fa-whatsapp"></i>
-              </a>
-              <a href="https://youtube.com/@teamvolante2014?si=Fok2FhPoN7XDPo0k" target="_blank">
-                <i className="fa-brands fa-youtube"></i>
-              </a>
-              <a href="https://www.instagram.com/team_volante/profilecard/?igsh=MTdyY2RrOWYxYng0Nw==" target="_blank">
-                <i className="fa-brands fa-instagram"></i>
-              </a>
-            </div>
+          <div className="social-icon">
+            <a href="https://www.linkedin.com/company/Volante-Motorsports-official/about/" target="_blank">
+              <i className="fa-brands fa-linkedin"></i>
+            </a>
+            {/* Replaced GitHub with WhatsApp group link per request */}
+            <a href="https://chat.whatsapp.com/ECtg9BcHZBSI3E9tdcNqGu?mode=ems_copy_t" aria-label="WhatsApp group" target="_blank">
+              <i className="fa-brands fa-whatsapp"></i>
+            </a>
+            <a href="https://youtube.com/@teamvolante2014?si=Fok2FhPoN7XDPo0k" target="_blank">
+              <i className="fa-brands fa-youtube"></i>
+            </a>
+            <a href="https://www.instagram.com/team_volante/profilecard/?igsh=MTdyY2RrOWYxYng0Nw==" target="_blank">
+              <i className="fa-brands fa-instagram"></i>
+            </a>
           </div>
         </div>
       </div>
@@ -737,6 +713,13 @@ const surpriseButton = document.getElementById("surpriseButton");
                     <p>Celebrating our victories and milestones</p>
                   </div>
                 </div>
+                <div className="carousel-slide">
+                  <img src={`${getBaseUrl()}/imagesvolante/grouppic5.png`} alt="Mega ATV Championship Goa 2022" />
+                  <div className="carousel-content">
+                    <h3>MEGA ATV CHAMPIONSHIP</h3>
+                    <p>2nd Runner Up — Mega ATV Championship, Goa 2022</p>
+                  </div>
+                </div>
               </div>
 
               <button className="carousel-btn prev" aria-label="Previous slide">
@@ -767,6 +750,10 @@ const surpriseButton = document.getElementById("surpriseButton");
               <button
                 className="carousel-indicator"
                 aria-label="Go to slide 4"
+              ></button>
+              <button
+                className="carousel-indicator"
+                aria-label="Go to slide 5"
               ></button>
             </div>
           </div>
@@ -1179,7 +1166,13 @@ const surpriseButton = document.getElementById("surpriseButton");
               </div>
             </div>
             <div className="contact-right">
-              <form className="contact-form" name="submit-to-google-sheet">
+              <form 
+                  className="contact-form" 
+                  action="https://formsubmit.co/volante@msrit.edu" 
+                  method="POST"
+              >
+                {/* Disable captcha for smoother UX */}
+                <input type="hidden" name="_captcha" value="false" />
                 <input
                   type="text"
                   name="Name"

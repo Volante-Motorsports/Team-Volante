@@ -35,6 +35,11 @@ export default function TeamPage() {
                 title: "TEAM ACHIEVEMENTS",
                 description: "Celebrating our victories and milestones",
             },
+            {
+                image: `${getBaseUrl()}/imagesvolante/grouppic5.jpg`,
+                title: "TEAM VOLANTE",
+                description: "Team Volante - Racing Excellence",
+            },
         ];
 
         const showSlide = (index: number) => {
@@ -171,6 +176,9 @@ export default function TeamPage() {
                                         <p>Celebrating our victories and milestones</p>
                                     </div>
                                 </div>
+                                <div className="carousel-slide">
+                                    <img src={`${getBaseUrlStatic()}/imagesvolante/grouppic5.jpg`} alt="Team Volante" />
+                                </div>
                             </div>
 
                             <button className="carousel-btn prev" aria-label="Previous slide">
@@ -201,6 +209,10 @@ export default function TeamPage() {
                             <button
                                 className="carousel-indicator"
                                 aria-label="Go to slide 4"
+                            ></button>
+                            <button
+                                className="carousel-indicator"
+                                aria-label="Go to slide 5"
                             ></button>
                         </div>
                     </div>

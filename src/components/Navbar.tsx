@@ -45,13 +45,12 @@ export default function Navbar() {
     return (
         <nav className="main-navbar">
             <a href="/" className="logo-link">
-                <span className="porsche-text">VOLANTE</span>
-                <img
-                    src={`${getBaseUrl()}/imagesvolante/logotrial1.webp`}
-                    className="logo"
-                    alt="Team Volante Logo"
-                />
-            </a>
+            <img
+                src={`${getBaseUrl()}/imagesvolante/volanteLogo.webp`}
+                className="logo"
+                alt="Team Volante Logo"
+            />
+        </a>
 
             {/* Mobile Menu */}
             <ul

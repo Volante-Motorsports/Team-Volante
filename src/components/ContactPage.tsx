@@ -5,35 +5,14 @@ import Navbar from "@/components/Navbar";
 
 export default function ContactPage() {
     const [mounted, setMounted] = useState(false);
+    const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+    const [errorMsg, setErrorMsg] = useState("");
     const formRef = useRef<HTMLFormElement>(null);
 
     useEffect(() => {
         setMounted(true);
 
-        // Contact form functionality
-        const scriptURL =
-            "https://script.google.com/macros/s/AKfycbwD11D7WsF4Hq2IlJsVPB-uww4tVRBFYJ--4rCTJSXtQb7bDfOzlQC5N6nMbUUH_aT1/exec";
-
-        const handleSubmit = (e: Event) => {
-            e.preventDefault();
-            if (formRef.current) {
-                fetch(scriptURL, { method: "POST", body: new FormData(formRef.current) })
-                    .then((response) => {
-                        if (
-                            confirm("Message sent successfully! We'll reach you out soon!.")
-                        ) {
-                            formRef.current?.reset();
-                        } else {
-                            console.log("User canceled further actions.");
-                        }
-                    })
-                    .catch((error) => console.error("Error!", error.message));
-            }
-        };
-
-        if (formRef.current) {
-            formRef.current.addEventListener("submit", handleSubmit);
-        }
+        // FormSubmit handles the submission natively. No JS required here.
 
         // AOS animation
         const loadAOS = () => {
@@ -53,11 +32,43 @@ export default function ContactPage() {
         loadAOS();
 
         return () => {
-            if (formRef.current) {
-                formRef.current.removeEventListener("submit", handleSubmit);
-            }
+            // cleanup if needed
         };
     }, []);
+
+    const handleSubmit = async (e: React.FormEvent) => {
+        e.preventDefault();
+        if (!formRef.current) return;
+
+        const formData = new FormData(formRef.current);
+        const data = {
+            Name: formData.get("Name"),
+            Email: formData.get("Email"),
+            Message: formData.get("Message"),
+        };
+
+        setStatus("loading");
+        setErrorMsg("");
+
+        try {
+            const res = await fetch("/api/contact", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(data),
+            });
+            const result = await res.json();
+            if (result.success) {
+                setStatus("success");
+                formRef.current?.reset();
+            } else {
+                setStatus("error");
+                setErrorMsg(result.error || "Something went wrong.");
+            }
+        } catch (err: any) {
+            setStatus("error");
+            setErrorMsg("Network error. Please try again.");
+        }
+    };
 
     return (
         <div className="contact-page-wrapper">
@@ -106,6 +117,7 @@ export default function ContactPage() {
                             <form
                                 ref={formRef}
                                 className="contact-form"
+                                onSubmit={handleSubmit}
                                 suppressHydrationWarning
                             >
                                 <input
@@ -126,10 +138,28 @@ export default function ContactPage() {
                                     name="Message"
                                     rows={6}
                                     placeholder="Your Message"
+                                    required
                                     suppressHydrationWarning
                                 ></textarea>
-                                <button type="submit" className="btn btn2">
-                                    Submit
+
+                                {status === "success" && (
+                                    <p style={{ color: "#4caf50", marginBottom: "10px", fontWeight: 600 }}>
+                                        ✅ Message sent! We&apos;ll get back to you soon.
+                                    </p>
+                                )}
+                                {status === "error" && (
+                                    <p style={{ color: "#ff004f", marginBottom: "10px", fontWeight: 600 }}>
+                                        ❌ {errorMsg}
+                                    </p>
+                                )}
+
+                                <button
+                                    type="submit"
+                                    className="btn btn2"
+                                    disabled={status === "loading"}
+                                    style={{ opacity: status === "loading" ? 0.7 : 1 }}
+                                >
+                                    {status === "loading" ? "Sending..." : "Submit"}
                                 </button>
                             </form>
                         </div>

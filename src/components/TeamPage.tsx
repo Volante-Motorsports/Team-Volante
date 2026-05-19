@@ -223,81 +223,40 @@ export default function TeamPage() {
                             <div className="card">
                                 <div className="profile-img">
                                     <img
-                                        src={`${getBaseUrlStatic()}/imagesvolante/profile_imgs/Prajwal_baretto.jpeg`}
-                                        alt="Prajwal Baretto"
+                                        src={`${getBaseUrlStatic()}/imagesvolante/profile_imgs/mohamed_tanveer.jpeg`}
+                                        alt="Mohamed Tanveer"
+                                        style={{ objectPosition: "80% 15%" }}
                                     />
                                 </div>
                                 <div className="content">
-                                    <h3>Prajwal Baretto</h3>
-                                    <span className="role-badge captain">Team Captain</span>
-                                    <div className="social-media">
-                                        <a href="mailto:prajwalbaretto261@gmail.com" target="_blank">
-                                            <i className="fa-solid fa-paper-plane"></i>
-                                        </a>
-                                        <a href="https://www.linkedin.com/in/prajwal-baretto-9235711b1?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank">
-                                            <i className="fa-brands fa-linkedin"></i>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div className="card">
-                                <div className="profile-img">
-                                    <img
-                                        src={`${getBaseUrlStatic()}/imagesvolante/profile_imgs/shriya_iyer.jpg`}
-                                        alt="Shriya Iyer"
-                                    />
-                                </div>
-                                <div className="content">
-                                    <h3>Shriya Iyer</h3>
-                                    <span className="role-badge vice-captain">Vice Captain</span>
-                                    <div className="social-media">
-                                        <a href="mailto:shriyaiyer18@gmail.com" target="_blank">
-                                            <i className="fa-solid fa-paper-plane"></i>
-                                        </a>
-                                        <a href="https://www.linkedin.com/in/shriya-s-iyer-63257627a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank">
-                                            <i className="fa-brands fa-linkedin"></i>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div className="card">
-                                <div className="profile-img">
-                                    <img
-                                        src={`${getBaseUrlStatic()}/imagesvolante/profile_imgs/ninnad.jpg`}
-                                        alt="Ninnad P"
-                                    />
-                                </div>
-                                <div className="content">
-                                    <h3>Ninnad P</h3>
-                                    <span className="role-badge lead">Brakes Lead</span>
-                                    <div className="social-media">
-                                        <a href="mailto:ninnadpgangurde333@gmail.com" target="_blank">
-                                            <i className="fa-solid fa-paper-plane"></i>
-                                        </a>
-                                        <a href="https://www.linkedin.com/in/ninnad-pradeep-gangurde-937b99263?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank">
-                                            <i className="fa-brands fa-linkedin"></i>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div className="card">
-                                <div className="profile-img">
-                                    <img
-                                        src={`${getBaseUrlStatic()}/imagesvolante/profile_imgs/Samuel.jpg`}
-                                        alt="Samuel Jabez"
-                                    />
-                                </div>
-                                <div className="content">
-                                    <h3>Samuel Jabez</h3>
-                                    <span className="role-badge lead">Design Lead</span>
+                                    <h3>Mohamed Tanveer</h3>
+                                    <span className="role-badge captain">Captain & Suspension Lead</span>
                                     <div className="social-media">
                                         <a href="mailto:" target="_blank">
                                             <i className="fa-solid fa-paper-plane"></i>
                                         </a>
-                                        <a href="https://www.linkedin.com/in/prajwal-baretto-9235711b1?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank">
+                                        <a href="#" target="_blank">
+                                            <i className="fa-brands fa-linkedin"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div className="card">
+                                <div className="profile-img">
+                                    <img
+                                        src={`${getBaseUrlStatic()}/imagesvolante/profile_imgs/manikanta_km.png`}
+                                        alt="Manikanta KM"
+                                    />
+                                </div>
+                                <div className="content">
+                                    <h3>Manikanta KM</h3>
+                                    <span className="role-badge vice-captain">Vice Captain</span>
+                                    <div className="social-media">
+                                        <a href="mailto:" target="_blank">
+                                            <i className="fa-solid fa-paper-plane"></i>
+                                        </a>
+                                        <a href="#" target="_blank">
                                             <i className="fa-brands fa-linkedin"></i>
                                         </a>
                                     </div>
@@ -306,68 +265,23 @@ export default function TeamPage() {
                         </div>
                     </div>
 
-                    {/* Second row - 4 more team members */}
                     <div className="body-like">
                         <div className="wrapper" data-aos="fade-down-right">
                             <div className="card">
                                 <div className="profile-img">
                                     <img
-                                        src={`${getBaseUrlStatic()}/imagesvolante/profile_imgs/Harshini.jpg`}
-                                        alt="Harshini"
+                                        src={`${getBaseUrlStatic()}/imagesvolante/profile_imgs/yash_chipkar.jpeg`}
+                                        alt="Yash Chipkar"
                                     />
                                 </div>
                                 <div className="content">
-                                    <h3 className="fixing">Harshini</h3>
-                                    <span className="role-badge lead">
-                                        Management & Media Lead
-                                    </span>
-                                    <div className="social-media">
-                                        <a href="mailto:" target="_blank">
-                                            <i className="fa-solid fa-paper-plane"></i>
-                                        </a>
-                                        <a href="https://www.linkedin.com/in/shriya-s-iyer-63257627a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank">
-                                            <i className="fa-brands fa-linkedin"></i>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div className="card">
-                                <div className="profile-img">
-                                    <img
-                                        src={`${getBaseUrlStatic()}/imagesvolante/profile_imgs/suraj.jpg`}
-                                        alt="Suraj Am"
-                                    />
-                                </div>
-                                <div className="content">
-                                    <h3>Suraj Am</h3>
-                                    <span className="role-badge lead">Manufacturing Lead</span>
-                                    <div className="social-media">
-                                        <a href="mailto:" target="_blank">
-                                            <i className="fa-solid fa-paper-plane"></i>
-                                        </a>
-                                        <a href="https://www.linkedin.com/in/surajam29?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank">
-                                            <i className="fa-brands fa-linkedin"></i>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div className="card">
-                                <div className="profile-img">
-                                    <img
-                                        src={`${getBaseUrlStatic()}/imagesvolante/profile_imgs/sudishwaran.jpg`}
-                                        alt="Sudishwaran"
-                                    />
-                                </div>
-                                <div className="content">
-                                    <h3>Sudishwaran</h3>
+                                    <h3>Yash Chipkar</h3>
                                     <span className="role-badge lead">Electrical Lead</span>
                                     <div className="social-media">
                                         <a href="mailto:" target="_blank">
                                             <i className="fa-solid fa-paper-plane"></i>
                                         </a>
-                                        <a href="https://www.linkedin.com/in/sudishwaaran-p-872408268" target="_blank">
+                                        <a href="#" target="_blank">
                                             <i className="fa-brands fa-linkedin"></i>
                                         </a>
                                     </div>
@@ -377,18 +291,131 @@ export default function TeamPage() {
                             <div className="card">
                                 <div className="profile-img">
                                     <img
-                                        src={`${getBaseUrlStatic()}/imagesvolante/profile_imgs/Samiksh.jpg`}
-                                        alt="Samiksh Shetty"
+                                        src={`${getBaseUrlStatic()}/imagesvolante/profile_imgs/nahusha_gb.jpeg`}
+                                        alt="Nahusha GB"
                                     />
                                 </div>
                                 <div className="content">
-                                    <h3>Samiksh Shetty</h3>
-                                    <span className="role-badge lead">Drivetrain Lead</span>
+                                    <h3>Nahusha GB</h3>
+                                    <span className="role-badge lead">Media Lead</span>
                                     <div className="social-media">
                                         <a href="mailto:" target="_blank">
                                             <i className="fa-solid fa-paper-plane"></i>
                                         </a>
-                                        <a href="https://www.linkedin.com/in/samiksh-shetty-428b5b265?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank">
+                                        <a href="#" target="_blank">
+                                            <i className="fa-brands fa-linkedin"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div className="card">
+                                <div className="profile-img">
+                                    <img
+                                        src={`${getBaseUrlStatic()}/imagesvolante/profile_imgs/vinay_br.jpeg`}
+                                        alt="Vinay BR"
+                                    />
+                                </div>
+                                <div className="content">
+                                    <h3>Vinay BR</h3>
+                                    <span className="role-badge lead">Manufacturing Lead</span>
+                                    <div className="social-media">
+                                        <a href="mailto:" target="_blank">
+                                            <i className="fa-solid fa-paper-plane"></i>
+                                        </a>
+                                        <a href="#" target="_blank">
+                                            <i className="fa-brands fa-linkedin"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="body-like">
+                        <div className="wrapper" data-aos="fade-down-left">
+                            <div className="card">
+                                <div className="profile-img">
+                                    <img
+                                        src={`${getBaseUrlStatic()}/imagesvolante/profile_imgs/sharath_ramesh.png`}
+                                        alt="Sharath Ramesh"
+                                    />
+                                </div>
+                                <div className="content">
+                                    <h3>Sharath Ramesh</h3>
+                                    <span className="role-badge lead">Design Lead</span>
+                                    <div className="social-media">
+                                        <a href="mailto:" target="_blank">
+                                            <i className="fa-solid fa-paper-plane"></i>
+                                        </a>
+                                        <a href="#" target="_blank">
+                                            <i className="fa-brands fa-linkedin"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div className="card">
+                                <div className="profile-img">
+                                    <img
+                                        src={`${getBaseUrlStatic()}/imagesvolante/profile_imgs/jnanesh_kumar.jpeg`}
+                                        alt="Jnanesh Kumar SG"
+                                    />
+                                </div>
+                                <div className="content">
+                                    <h3>Jnanesh Kumar SG</h3>
+                                    <span className="role-badge lead">Brakes Lead</span>
+                                    <div className="social-media">
+                                        <a href="mailto:" target="_blank">
+                                            <i className="fa-solid fa-paper-plane"></i>
+                                        </a>
+                                        <a href="#" target="_blank">
+                                            <i className="fa-brands fa-linkedin"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div className="card">
+                                <div className="profile-img">
+                                    <img
+                                        src={`${getBaseUrlStatic()}/imagesvolante/profile_imgs/santosh_nv.jpeg`}
+                                        alt="Santosh NV"
+                                    />
+                                </div>
+                                <div className="content">
+                                    <h3>Santosh NV</h3>
+                                    <span className="role-badge lead">Steering Lead</span>
+                                    <div className="social-media">
+                                        <a href="mailto:" target="_blank">
+                                            <i className="fa-solid fa-paper-plane"></i>
+                                        </a>
+                                        <a href="#" target="_blank">
+                                            <i className="fa-brands fa-linkedin"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="body-like">
+                        <div className="wrapper" data-aos="fade-down-right">
+                            <div className="card">
+                                <div className="profile-img">
+                                    <img
+                                        src={`${getBaseUrlStatic()}/imagesvolante/profile_imgs/kiran_s.jpeg`}
+                                        alt="Kiran S"
+                                    />
+                                </div>
+                                <div className="content">
+                                    <h3>Kiran S</h3>
+                                    <span className="role-badge lead">Management Lead</span>
+                                    <div className="social-media">
+                                        <a href="mailto:" target="_blank">
+                                            <i className="fa-solid fa-paper-plane"></i>
+                                        </a>
+                                        <a href="#" target="_blank">
                                             <i className="fa-brands fa-linkedin"></i>
                                         </a>
                                     </div>
